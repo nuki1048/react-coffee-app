@@ -1,6 +1,7 @@
 import "./App.scss";
 import About from "./components/About/About";
 import Best from "./components/Best/Best";
+import Footer from "./components/Footer/Footer";
 import Promo from "./components/Promo/Promo";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
 			<Promo />
 			<About />
 			<Best />
+			<Footer />
 		</div>
 	);
 }

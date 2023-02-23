@@ -1,0 +1,19 @@
+.section-footer {
+	padding-top: 50px;
+	height: 150px;
+	.navbar {
+		margin: 0 auto;
+		position: relative;
+		&::before {
+			content: "";
+			display: block;
+			width: 200px;
+			height: 30px;
+			position: absolute;
+			background: url("../../icons/Beans_logo-black.svg");
+			left: 50%;
+			transform: translateX(-50%);
+			top: 50px;
+		}
+	}
+}
