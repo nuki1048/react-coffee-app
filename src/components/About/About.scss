@@ -1,0 +1,35 @@
+.section-about {
+	min-height: 520px;
+	padding: 80px 0 100px 0;
+	.about {
+		&-tittle {
+			position: relative;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 35px;
+			color: #000000;
+			&::before {
+				content: "";
+				display: block;
+				width: 200px;
+				height: 30px;
+				position: absolute;
+				background: url("../../icons/Beans_logo-black.svg");
+				left: 50%;
+				transform: translateX(-50%);
+				top: 50px;
+			}
+		}
+		&-info {
+			margin-top: 90px;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 30px;
+			text-align: center;
+
+			color: #000000;
+		}
+	}
+}

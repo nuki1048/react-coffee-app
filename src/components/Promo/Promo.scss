@@ -1,0 +1,53 @@
+.section-promo {
+	min-height: 640px;
+	padding: 30px 0 200px 0;
+	background: url(../../../public/img/main_bg.jpg) center (center / cover) no-repeat;
+	.promo-tittle {
+		position: relative;
+		margin-top: 110px;
+		text-align: center;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 40px;
+		line-height: 58px;
+		color: #ffffff;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 200px;
+			height: 29.3px;
+			background: url(../../icons/Beans-logo.svg);
+			left: 50%;
+			transform: translateX(-50%);
+			top: 60px;
+		}
+	}
+	.promo-info {
+		margin-top: 80px;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 50px;
+		color: #ffffff;
+	}
+	.promo-btn {
+		margin-top: 18px;
+		width: 120px;
+		height: 30px;
+		border: 1px solid #ffffff;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border-radius: 3px;
+		background-color: transparent;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 20px;
+		color: #ffffff;
+		transition: 0.5s all;
+		&:hover {
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+		}
+	}
+}

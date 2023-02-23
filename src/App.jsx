@@ -1,9 +1,14 @@
 import "./App.scss";
+import About from "./components/About/About";
+import Best from "./components/Best/Best";
+import Promo from "./components/Promo/Promo";
 
 function App() {
 	return (
 		<div className="App">
-			<h1>Hello there</h1>
+			<Promo />
+			<About />
+			<Best />
 		</div>
 	);
 }
