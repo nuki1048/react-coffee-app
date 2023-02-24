@@ -3,7 +3,7 @@ import { Container } from "@mui/material";
 import "./Promo.scss";
 const SectionPromo = (props) => {
 	return (
-		<div className="section-promo">
+		<section className="section-promo">
 			<Container>
 				<h1 className="promo-tittle">Everything You Love About Coffee</h1>
 				<h2 className="promo-info">
@@ -13,7 +13,7 @@ const SectionPromo = (props) => {
 				</h2>
 				<button className="promo-btn">More</button>
 			</Container>
-		</div>
+		</section>
 	);
 };
 
