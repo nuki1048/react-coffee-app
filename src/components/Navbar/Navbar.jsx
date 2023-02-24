@@ -1,6 +1,7 @@
 import React from "react";
-import { Container } from "@mui/material";
+// import { Container } from "@mui/material";
 import "./Navbar.scss";
+import { NavLink, Outlet } from "react-router-dom";
 const Navbar = ({ color, beforeColor }) => {
 	let aboutClasses = "navbar-link about";
 	let navbarLink = "navbar-link";
@@ -18,13 +19,20 @@ const Navbar = ({ color, beforeColor }) => {
 		navbarLink += " black";
 	}
 	return (
-		<Container>
-			<ul className="navbar">
-				<li className={aboutClasses}>Coffee house</li>
-				<li className={navbarLink}>Our coffee</li>
-				<li className={navbarLink}>For your pleasure</li>
-			</ul>
-		</Container>
+		<div>
+			<nav className="navbar">
+				<NavLink to="/" className={aboutClasses}>
+					Coffee house
+				</NavLink>
+				<NavLink to="coffee" className={navbarLink}>
+					Our coffee
+				</NavLink>
+				<NavLink to="pleasure" className={navbarLink}>
+					For your pleasure
+				</NavLink>
+			</nav>
+			<Outlet />
+		</div>
 	);
 };
 

@@ -1,4 +1,7 @@
 .navbar {
+	position: absolute;
+	top: 52px;
+	left: 180px;
 	width: 324px;
 	height: 18px;
 	display: flex;
@@ -10,7 +13,7 @@
 		font-weight: 400;
 		font-size: 12px;
 		line-height: 17px;
-		cursor: pointer;
+		text-decoration: none;
 	}
 	.about {
 		position: relative;

@@ -1,18 +1,18 @@
 import "./App.scss";
-import About from "./components/About/About";
-import Best from "./components/Best/Best";
-import Footer from "./components/Footer/Footer";
-import Promo from "./components/Promo/Promo";
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-	return (
-		<div className="App">
-			<Promo />
-			<About />
-			<Best />
-			<Footer />
-		</div>
+	const router = createBrowserRouter(
+		createRoutesFromElements(
+			<Route path="/" element={<Navbar color={"white"} beforeColor={"white"} />}>
+				<Route index element={<Home />} />
+				<Route path="coffee" />
+			</Route>
+		)
 	);
+	return <RouterProvider router={router} />;
 }
 
 export default App;
