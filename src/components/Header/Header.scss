@@ -1,0 +1,13 @@
+.header {
+	min-height: 260px;
+	overflow: hidden;
+	&_title {
+		margin: 130px 0 0 0;
+		text-align: center;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 40px;
+		line-height: 58px;
+		color: #ffffff;
+	}
+}

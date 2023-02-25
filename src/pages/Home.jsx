@@ -5,12 +5,12 @@ import Footer from "../components/Footer/Footer";
 import Promo from "../components/Promo/Promo";
 const Home = () => {
 	return (
-		<>
+		<div>
 			<Promo />
 			<About />
 			<Best />
 			<Footer />
-		</>
+		</div>
 	);
 };
 

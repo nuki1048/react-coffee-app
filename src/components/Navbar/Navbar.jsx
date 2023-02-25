@@ -24,7 +24,7 @@ const Navbar = ({ color, beforeColor }) => {
 				<NavLink to="/" className={aboutClasses}>
 					Coffee house
 				</NavLink>
-				<NavLink to="coffee" className={navbarLink}>
+				<NavLink to="about" className={navbarLink}>
 					Our coffee
 				</NavLink>
 				<NavLink to="pleasure" className={navbarLink}>

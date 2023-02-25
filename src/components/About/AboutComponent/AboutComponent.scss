@@ -1,0 +1,45 @@
+.about_component {
+	margin-top: 60px;
+	.content_wrapper {
+		width: 700px;
+		display: flex;
+		margin: 0 auto;
+		.info {
+			&-wrapper {
+				margin-left: 80px;
+				display: flex;
+				flex-direction: column;
+				min-height: 370px;
+				justify-content: space-around;
+				align-items: center;
+			}
+			&__tittle {
+				position: relative;
+				font-style: normal;
+				font-weight: 400;
+				font-size: 24px;
+				line-height: 35px;
+				color: #000000;
+				&::before {
+					content: "";
+					display: block;
+					width: 200px;
+					height: 30px;
+					position: absolute;
+					background: url("../../../icons/Beans_logo-black.svg");
+					left: 50%;
+					transform: translateX(-50%);
+					top: 50px;
+				}
+			}
+			&__descrip {
+				font-style: normal;
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 20px;
+				text-align: center;
+				color: #000000;
+			}
+		}
+	}
+}
