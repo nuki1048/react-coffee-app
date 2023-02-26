@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AboutComponent from "../components/About/AboutComponent/AboutComponent";
+import AboutComponent from "../components/AboutComponent/AboutComponent";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Store from "../components/Store/Store";
