@@ -4,12 +4,12 @@ import StoreItemWrapper from "../StoreItemWrapper/StoreItemWrapper";
 import FilterBtns from "../FilterBtns/FilterBtns";
 import FilterSearch from "../FilterSearch/FilterSearch";
 import "./Store.scss";
-const Store = ({ storeItem, onFilterSelect }) => {
+const Store = ({ storeItem, onFilterSelect, onUpdateSearch }) => {
 	return (
 		<section className="section-store">
 			<Container>
 				<div className="filter-wrapper">
-					<FilterSearch />
+					<FilterSearch onUpdateSearch={onUpdateSearch} />
 					<FilterBtns onFilterSelect={onFilterSelect} />
 				</div>
 				<StoreItemWrapper storeItem={storeItem} />
