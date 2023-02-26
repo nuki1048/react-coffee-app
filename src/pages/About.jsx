@@ -26,7 +26,7 @@ const About = () => {
 		}
 	};
 	const onFilterSelect = (filter) => {
-		setFilter({ filter });
+		setFilter(filter);
 	};
 	const visibleData = filterPost(storeItem, filter);
 	return (
