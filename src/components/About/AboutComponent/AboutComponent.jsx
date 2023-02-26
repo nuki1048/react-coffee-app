@@ -1,12 +1,13 @@
 import { Container } from "@mui/material";
 import React from "react";
 import "./AboutComponent.scss";
-const AboutComponent = ({ path, title }) => {
+const AboutComponent = ({ path, title, style }) => {
+	const img = path ? <img src={path} alt={title} /> : <div></div>;
 	return (
-		<section className="about_component">
+		<section style={{ ...style }} className="about_component">
 			<Container>
 				<div className="content_wrapper">
-					<img src={path} alt={title} />
+					{img}
 					<div className="info-wrapper">
 						<h2 className="info__tittle">{title}</h2>
 						<p className="info__descrip">

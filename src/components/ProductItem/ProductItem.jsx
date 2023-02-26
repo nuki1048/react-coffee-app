@@ -1,11 +1,11 @@
 import React from "react";
 import "./ProductItem.scss";
-const ProductItem = (props) => {
+const ProductItem = ({ path, name, price }) => {
 	return (
 		<div className="product-item">
-			<img src={props.path} alt="" />
-			<h3 className="product-info">{props.name}</h3>
-			<div className="product-price">{props.price}$</div>
+			<img src={path} alt="" />
+			<h3 className="product-info">{name}</h3>
+			<div className="product-price">{price}$</div>
 		</div>
 	);
 };
