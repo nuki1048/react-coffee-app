@@ -1,7 +1,8 @@
 import { Container } from "@mui/system";
 import React from "react";
+import StoreItemWrapper from "../StoreItemWrapper/StoreItemWrapper";
 import "./Store.scss";
-const Store = (props) => {
+const Store = ({ storeItem }) => {
 	return (
 		<section className="section-store">
 			<Container>
@@ -17,44 +18,7 @@ const Store = (props) => {
 						<button className="filter-btn">Columbia</button>
 					</label>
 				</div>
-				<div className="store-wrapper">
-					<div className="store-item">
-						<img src="img/cards_preview/coffee-arabica.png" alt="" />
-						<h3 className="store-item_name">AROMISTICO Coffee 1 kg</h3>
-						<div className="store-item_sort">Brazil</div>
-						<div className="store-item_price">6.99$</div>
-					</div>
-					<div className="store-item">
-						<img src="img/cards_preview/coffee-arabica.png" alt="" />
-						<h3 className="store-item_name">AROMISTICO Coffee 1 kg</h3>
-						<div className="store-item_sort">Brazil</div>
-						<div className="store-item_price">6.99$</div>
-					</div>
-					<div className="store-item">
-						<img src="img/cards_preview/coffee-arabica.png" alt="" />
-						<h3 className="store-item_name">AROMISTICO Coffee 1 kg</h3>
-						<div className="store-item_sort">Brazil</div>
-						<div className="store-item_price">6.99$</div>
-					</div>
-					<div className="store-item">
-						<img src="img/cards_preview/coffee-arabica.png" alt="" />
-						<h3 className="store-item_name">AROMISTICO Coffee 1 kg</h3>
-						<div className="store-item_sort">Brazil</div>
-						<div className="store-item_price">6.99$</div>
-					</div>
-					<div className="store-item">
-						<img src="img/cards_preview/coffee-arabica.png" alt="" />
-						<h3 className="store-item_name">AROMISTICO Coffee 1 kg</h3>
-						<div className="store-item_sort">Brazil</div>
-						<div className="store-item_price">6.99$</div>
-					</div>
-					<div className="store-item">
-						<img src="img/cards_preview/coffee-arabica.png" alt="" />
-						<h3 className="store-item_name">AROMISTICO Coffee 1 kg</h3>
-						<div className="store-item_sort">Brazil</div>
-						<div className="store-item_price">6.99$</div>
-					</div>
-				</div>
+				<StoreItemWrapper storeItem={storeItem} />
 			</Container>
 		</section>
 	);
