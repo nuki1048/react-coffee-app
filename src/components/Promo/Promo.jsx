@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container } from "@mui/material";
 import "./Promo.scss";
 const SectionPromo = (props) => {
@@ -11,7 +12,9 @@ const SectionPromo = (props) => {
 					<br />
 					Want to try our beans?
 				</h2>
-				<button className="promo-btn">More</button>
+				<Link to={"about"} className="promo-btn">
+					More
+				</Link>
 			</Container>
 		</section>
 	);

@@ -12,12 +12,29 @@ const About = () => {
 		{ img: "img/cards_preview/coffee-arabica.png", name: "AROMISTICO Coffee 1 kg", country: "Brazil", price: "6.99" },
 		{ img: "img/cards_preview/coffee-arabica.png", name: "AROMISTICO Coffee 1 kg", country: "Brazil", price: "6.99" },
 	]);
+	const [filter, setFilter] = useState("All");
+	const filterPost = (items, filter) => {
+		switch (filter) {
+			case "Brazil":
+				return items.filter((item) => item.country === "Brazil");
+			case "Kenya":
+				return items.filter((item) => item.country === "Kenya");
+			case "Columbia":
+				return items.filter((item) => item.country === "Columbia");
+			default:
+				return items;
+		}
+	};
+	const onFilterSelect = (filter) => {
+		setFilter({ filter });
+	};
+	const visibleData = filterPost(storeItem, filter);
 	return (
 		<div>
 			<Header tittle={"Our Coffee"} path={"img/second_main_bg.jpg"} />
 			<AboutComponent title={"About our beans"} path={"img/aboutPhoto.jpg"} />
 			<hr style={{ width: "240px", marginTop: "60px" }} />
-			<Store storeItem={storeItem} />
+			<Store storeItem={visibleData} onFilterSelect={onFilterSelect} />
 			<Footer />
 		</div>
 	);
