@@ -1,4 +1,8 @@
 .filter {
+	&__btns {
+		display: flex;
+		height: 30px;
+	}
 	&-btn {
 		border: none;
 		padding: 0;
@@ -24,6 +28,6 @@
 		}
 	}
 	&__text {
-		text-align: center;
+		margin-right: 20px;
 	}
 }
