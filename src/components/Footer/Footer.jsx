@@ -5,7 +5,7 @@ import "./Footer.scss";
 const Footer = (props) => {
 	return (
 		<section className="section-footer">
-			<Container>
+			<Container sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 				<Navbar beforeColor={"black"} color={"black"} />
 			</Container>
 		</section>

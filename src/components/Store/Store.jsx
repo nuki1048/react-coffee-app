@@ -15,7 +15,7 @@ const Store = ({ storeItem, onFilterSelect, onUpdateSearch, filtersVisible }) =>
 	);
 	return (
 		<section className="section-store">
-			<Container>
+			<Container sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 				{filters}
 				<StoreItemWrapper storeItem={storeItem} />
 			</Container>

@@ -5,10 +5,10 @@ const AboutComponent = ({ path, title, style }) => {
 	const img = path ? <img src={path} alt={title} /> : <div></div>;
 	return (
 		<section style={{ ...style }} className="about_component">
-			<Container>
+			<Container sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 				<div className="content_wrapper">
 					{img}
-					<div className="info-wrapper">
+					<div style={{ marginLeft: path ? 80 : 0 }} className="info-wrapper">
 						<h2 className="info__tittle">{title}</h2>
 						<p className="info__descrip">
 							Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid at highly
