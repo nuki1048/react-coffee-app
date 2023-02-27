@@ -82,7 +82,12 @@ const About = () => {
 			<Header tittle={"Our Coffee"} path={"img/second_main_bg.jpg"} />
 			<AboutComponent title={"About our beans"} path={"img/aboutPhoto.jpg"} />
 			<hr style={{ width: "240px", marginTop: "60px" }} />
-			<Store onUpdateSearch={onUpdateSearch} storeItem={visibleData} onFilterSelect={onFilterSelect} />
+			<Store
+				onUpdateSearch={onUpdateSearch}
+				storeItem={visibleData}
+				onFilterSelect={onFilterSelect}
+				filtersVisible={true}
+			/>
 			<Footer />
 		</div>
 	);

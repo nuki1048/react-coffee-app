@@ -4,14 +4,19 @@ import StoreItemWrapper from "../StoreItemWrapper/StoreItemWrapper";
 import FilterBtns from "../FilterBtns/FilterBtns";
 import FilterSearch from "../FilterSearch/FilterSearch";
 import "./Store.scss";
-const Store = ({ storeItem, onFilterSelect, onUpdateSearch }) => {
+const Store = ({ storeItem, onFilterSelect, onUpdateSearch, filtersVisible }) => {
+	const filters = filtersVisible ? (
+		<div className="filter-wrapper">
+			<FilterSearch onUpdateSearch={onUpdateSearch} />
+			<FilterBtns onFilterSelect={onFilterSelect} />
+		</div>
+	) : (
+		<div></div>
+	);
 	return (
 		<section className="section-store">
 			<Container>
-				<div className="filter-wrapper">
-					<FilterSearch onUpdateSearch={onUpdateSearch} />
-					<FilterBtns onFilterSelect={onFilterSelect} />
-				</div>
+				{filters}
 				<StoreItemWrapper storeItem={storeItem} />
 			</Container>
 		</section>
