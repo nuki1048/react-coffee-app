@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-coffee-app/static/css/main.48b2926b.css",
-    "main.js": "/react-coffee-app/static/js/main.cfe646f7.js",
+    "main.css": "/react-coffee-app/static/css/main.920b2208.css",
+    "main.js": "/react-coffee-app/static/js/main.a0d95bc1.js",
     "static/media/cards_bg.jpg": "/react-coffee-app/static/media/cards_bg.942241ed771d8a50084c.jpg",
     "static/media/main_bg.jpg": "/react-coffee-app/static/media/main_bg.893e0f03ce210d76ba7c.jpg",
     "static/media/black-coffee-beans_type2.svg": "/react-coffee-app/static/media/black-coffee-beans_type2.1571b01b7aaf06c416f2.svg",
@@ -9,11 +9,11 @@
     "static/media/Beans-logo.svg": "/react-coffee-app/static/media/Beans-logo.18515476b20f87245fc8.svg",
     "static/media/Beans_logo-black.svg": "/react-coffee-app/static/media/Beans_logo-black.0445e26693e04e08125f.svg",
     "index.html": "/react-coffee-app/index.html",
-    "main.48b2926b.css.map": "/react-coffee-app/static/css/main.48b2926b.css.map",
-    "main.cfe646f7.js.map": "/react-coffee-app/static/js/main.cfe646f7.js.map"
+    "main.920b2208.css.map": "/react-coffee-app/static/css/main.920b2208.css.map",
+    "main.a0d95bc1.js.map": "/react-coffee-app/static/js/main.a0d95bc1.js.map"
   },
   "entrypoints": [
-    "static/css/main.48b2926b.css",
-    "static/js/main.cfe646f7.js"
+    "static/css/main.920b2208.css",
+    "static/js/main.a0d95bc1.js"
   ]
 }
