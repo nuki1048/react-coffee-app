@@ -5,7 +5,6 @@
 		display: flex;
 		.info {
 			&-wrapper {
-				margin-left: 80px;
 				display: flex;
 				flex-direction: column;
 				min-height: 370px;
@@ -40,5 +39,8 @@
 				color: #000000;
 			}
 		}
+	}
+	.margin-left {
+		margin-left: 80px;
 	}
 }

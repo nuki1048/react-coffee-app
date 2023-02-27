@@ -8,7 +8,7 @@ const FilterBtns = (props) => {
 	];
 	return (
 		<label className="filter__btns">
-			Or filter
+			<div className="filter__text">Or filter</div>
 			{btnsData.map((button) => (
 				<button className="filter-btn" onClick={() => props.onFilterSelect(button.label)} key={button.name}>
 					{button.label}
