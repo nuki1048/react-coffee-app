@@ -3,51 +3,9 @@ import AboutComponent from "../components/AboutComponent/AboutComponent";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Store from "../components/Store/Store";
+import db from "../db.json";
 const About = () => {
-	const [storeItem] = useState([
-		{
-			img: "img/cards_preview/coffee-arabica.png",
-			name: "AROMISTICO Coffee 1 kg",
-			country: "Brazil",
-			price: "6.99",
-			id: 1,
-		},
-		{
-			img: "img/cards_preview/coffee-arabica.png",
-			name: "AROMISTICO Coffee 1 kg",
-			country: "Kenya",
-			price: "6.99",
-			id: 2,
-		},
-		{
-			img: "img/cards_preview/coffee-arabica.png",
-			name: "AROMISTICO Coffee 1 kg",
-			country: "Columbia",
-			price: "6.99",
-			id: 3,
-		},
-		{
-			img: "img/cards_preview/coffee-arabica.png",
-			name: "AROMISTICO Coffee 1 kg",
-			country: "Brazil",
-			price: "6.99",
-			id: 4,
-		},
-		{
-			img: "img/cards_preview/coffee-arabica.png",
-			name: "Resto Coffee 1kg",
-			country: "Brazil",
-			price: "6.99",
-			id: 5,
-		},
-		{
-			img: "img/cards_preview/coffee-arabica.png",
-			name: "AROMISTICO Coffee 1 kg",
-			country: "Brazil",
-			price: "6.99",
-			id: 6,
-		},
-	]);
+	const storeItem = JSON.parse(JSON.stringify(db.store));
 	const [filter, setFilter] = useState("All");
 	const [term, setTerm] = useState("");
 	const filterPost = (items, filter) => {

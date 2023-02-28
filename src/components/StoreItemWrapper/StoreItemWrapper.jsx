@@ -2,6 +2,7 @@ import React from "react";
 import StoreItem from "../StoreItem/StoreItem";
 
 import "./StoreItemWrapper.scss";
+
 const StoreItemWrapper = ({ storeItem }) => {
 	return (
 		<div className="store-wrapper">
