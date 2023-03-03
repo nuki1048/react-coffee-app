@@ -21,7 +21,7 @@ const Navbar = ({ color, beforeColor }) => {
 	return (
 		<div>
 			<nav className="navbar">
-				<NavLink to="/" className={aboutClasses}>
+				<NavLink to="/react-coffee-app" className={aboutClasses}>
 					Coffee house
 				</NavLink>
 				<NavLink to="about" className={navbarLink}>

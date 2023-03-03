@@ -8,7 +8,7 @@ import Pleasure from "./pages/Pleasure";
 function App() {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
-			<Route path="/" element={<Navbar color={"white"} beforeColor={"white"} />}>
+			<Route path="react-coffee-app" element={<Navbar color={"white"} beforeColor={"white"} />}>
 				<Route index element={<Home />} />
 				<Route path="about" element={<About />} />
 				<Route path="pleasure" element={<Pleasure />} />
