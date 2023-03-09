@@ -1,6 +1,5 @@
 import React from "react";
 import ProductItem from "../ProductItem/ProductItem";
-import db from "../../db.json";
 import "./ProductWrapper.scss";
 const ProductWrapper = ({ product }) => {
 	return (
