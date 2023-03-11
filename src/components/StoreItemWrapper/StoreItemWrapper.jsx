@@ -7,7 +7,14 @@ const StoreItemWrapper = ({ storeItem }) => {
 	return (
 		<div className="store-wrapper">
 			{storeItem.map((item) => (
-				<StoreItem img={item.img} name={item.name} country={item.country} price={item.price} key={item.id} />
+				<StoreItem
+					id={item.id}
+					img={item.img}
+					name={item.name}
+					country={item.country}
+					price={item.price}
+					key={item.id}
+				/>
 			))}
 		</div>
 	);

@@ -2,7 +2,7 @@ import React from "react";
 // import { Container } from "@mui/material";
 import "./Navbar.scss";
 import { NavLink, Outlet } from "react-router-dom";
-const Navbar = ({ color, beforeColor }) => {
+const Root = ({ color, beforeColor }) => {
 	let aboutClasses = "navbar-link about";
 	let navbarLink = "navbar-link";
 	if (beforeColor === "black") {
@@ -21,19 +21,21 @@ const Navbar = ({ color, beforeColor }) => {
 	return (
 		<div>
 			<nav className="navbar">
-				<NavLink to="/" className={aboutClasses}>
+				<NavLink end to="/" className={aboutClasses}>
 					Coffee house
 				</NavLink>
-				<NavLink to="about" className={navbarLink}>
+				<NavLink end to="about" className={navbarLink}>
 					Our coffee
 				</NavLink>
-				<NavLink to="pleasure" className={navbarLink}>
+				<NavLink end to="pleasure" className={navbarLink}>
 					For your pleasure
 				</NavLink>
 			</nav>
-			<Outlet />
+			<div>
+				<Outlet />
+			</div>
 		</div>
 	);
 };
 
-export default Navbar;
+export default Root;

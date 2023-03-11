@@ -6,7 +6,7 @@ const ProductWrapper = ({ product }) => {
 		<div className="product-wrapper">
 			{product.map((item) => {
 				const { path, price, name, id } = item;
-				return <ProductItem path={path} price={price} name={name} key={id} />;
+				return <ProductItem id={id} path={path} price={price} name={name} key={id} />;
 			})}
 		</div>
 	);
