@@ -12,7 +12,7 @@ const SectionPromo = (props) => {
 					<br />
 					Want to try our beans?
 				</h2>
-				<Link to={"about"} className="promo-btn">
+				<Link to={"ourCoffee"} className="promo-btn">
 					More
 				</Link>
 			</Container>

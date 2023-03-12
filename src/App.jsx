@@ -1,18 +1,18 @@
 import "./App.scss";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
-import Root from "./components/Navbar/Navbar";
-import About from "./pages/About";
-import Pleasure from "./pages/Pleasure";
-import AboutItem from "./pages/AboutItem";
+import Home from "./pages/home/Home";
+import Root from "./components/navbar/Navbar";
+import OurCoffee from "./pages/ourCoffee/OurCoffee";
+import Pleasure from "./pages/pleasure/Pleasure";
+import OurCoffeeDetails from "./pages/ourCoffeeDetails/OurCoffeeDetails";
 
 function App() {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route path="/" element={<Root color={"white"} beforeColor={"white"} />}>
 				<Route index element={<Home />} />
-				<Route path="about" element={<About />} />
-				<Route path="about/:productId" element={<AboutItem />} />
+				<Route path="ourCoffee" element={<OurCoffee />} />
+				<Route path="ourCoffee/:productId" element={<OurCoffeeDetails />} />
 				<Route path="pleasure" element={<Pleasure />} />
 			</Route>
 		)

@@ -1,5 +1,5 @@
 import React from "react";
-import ProductItem from "../ProductItem/ProductItem";
+import ProductItem from "../productItem/ProductItem";
 import "./ProductWrapper.scss";
 const ProductWrapper = ({ product }) => {
 	return (

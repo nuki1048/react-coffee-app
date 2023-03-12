@@ -2,6 +2,18 @@
 	min-height: 670px;
 	margin-top: 60px;
 }
+.store {
+	&-wrapper {
+		margin-top: 60px;
+		display: grid;
+		grid-template-columns: repeat(3, 220px);
+		grid-template-rows: repeat(2, minmax(260px, auto));
+		grid-auto-rows: minmax(260px, auto);
+		grid-auto-columns: 220px;
+		justify-content: center;
+		gap: 60px 71px;
+	}
+}
 .filter {
 	&-wrapper {
 		display: flex;

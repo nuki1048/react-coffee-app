@@ -2,7 +2,7 @@ import { Container } from "@mui/system";
 import React from "react";
 
 import "./Best.scss";
-import ProductWrapper from "../ProductWrapper/ProductWrapper";
+import ProductWrapper from "../productWrapper/ProductWrapper";
 const Best = ({ product }) => {
 	return (
 		<section className="section-best">

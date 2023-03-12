@@ -24,7 +24,7 @@ const Root = ({ color, beforeColor }) => {
 				<NavLink end to="/" className={aboutClasses}>
 					Coffee house
 				</NavLink>
-				<NavLink end to="about" className={navbarLink}>
+				<NavLink to="ourCoffee" className={navbarLink}>
 					Our coffee
 				</NavLink>
 				<NavLink end to="pleasure" className={navbarLink}>

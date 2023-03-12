@@ -1,6 +1,6 @@
 import { Container } from "@mui/system";
 import React from "react";
-import Root from "../Navbar/Navbar";
+import Root from "../navbar/Navbar";
 import "./Footer.scss";
 const Footer = (props) => {
 	return (
