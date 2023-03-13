@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProductItem.scss";
-const ProductItem = ({ path, name, price }) => {
+const ProductItem = ({ name, price }) => {
 	return (
 		<div className="product-item">
 			<img src="img/cards_preview/cofffee-presto.png" alt="" />
@@ -9,7 +9,5 @@ const ProductItem = ({ path, name, price }) => {
 		</div>
 	);
 };
-
-ProductItem.propTypes = {};
 
 export default ProductItem;

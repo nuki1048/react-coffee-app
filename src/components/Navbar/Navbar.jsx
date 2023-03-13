@@ -10,7 +10,7 @@ const Root = ({ color, beforeColor }) => {
 	} else if (beforeColor === "white") {
 		aboutClasses += " about_white";
 	}
-
+	// TODO Ось цей шедевр потрібно видалити та замініти його чи тернаркою чи бібліотечкою з классами
 	if (color === "white") {
 		aboutClasses += " white";
 		navbarLink += " white";

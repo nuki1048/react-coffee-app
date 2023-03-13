@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Container } from "@mui/material";
 import "./Promo.scss";
 const SectionPromo = (props) => {
+	// TODO Цей компонетн потрібно передивитись, ящко юзатєтся тільки в Home.jsx, то видалити та добавити цей код туди( не як компонент )
 	return (
 		<section className="section-promo">
 			<Container>

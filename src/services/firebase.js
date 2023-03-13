@@ -1,3 +1,5 @@
+// TODO Потрібно переробити цей 'компонент', та зробити його хуком
+// TODO Також потрібно добавити в цей будучий хук state(loading,error) щоб позбутися його в інших файлах
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
@@ -15,4 +17,3 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
 export const db = getFirestore(app);
-// export { app, storage, db };

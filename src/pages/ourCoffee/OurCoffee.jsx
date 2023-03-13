@@ -79,6 +79,9 @@ const OurCoffee = () => {
 				filtersVisible={true}
 				loading={loading}
 			/>
+			{
+				//TODO Ось цей код краще всього переробити так щоби error та loading не передавався по пропсам
+			}
 			<Footer />
 		</div>
 	);

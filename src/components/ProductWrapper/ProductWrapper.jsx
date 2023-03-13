@@ -13,3 +13,4 @@ const ProductWrapper = ({ product }) => {
 };
 
 export default ProductWrapper;
+// TODO Цей компонент взагалі краще всього видалити та іспользувати product.map в Home.jsx щоб тупо було легче

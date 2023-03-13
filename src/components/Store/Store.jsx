@@ -1,7 +1,7 @@
 import { Container } from "@mui/system";
 import React from "react";
 
-import FilterBtns from "../bilterBtns/FilterBtns";
+import FilterBtns from "../filterBtns/FilterBtns";
 import FilterSearch from "../filterSearch/FilterSearch";
 import Spinner from "../spinner/Spinner";
 import StoreItem from "../storeItem/StoreItem";
@@ -12,6 +12,7 @@ const Store = ({ storeItem, onFilterSelect, onUpdateSearch, filtersVisible, load
 		<div className="filter-wrapper">
 			<FilterSearch onUpdateSearch={onUpdateSearch} />
 			<FilterBtns onFilterSelect={onFilterSelect} />
+			//TODO Ці два компонента можно об'єдинити в один, вони окрім цього компонента ніде не юзаються
 		</div>
 	) : null;
 	return (

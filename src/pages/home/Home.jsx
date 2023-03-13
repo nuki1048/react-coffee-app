@@ -9,6 +9,8 @@ import { collection, getDocs } from "firebase/firestore";
 const Home = () => {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
+	// TODO Ось тут потрібно зробити загрузку(тимчасову, чисто щоб працювало)
+	// TODO Після того як зроблю цей хук з firebase, то виадалити звідси цей стейт
 
 	const dataCollection = collection(db, "best");
 	useEffect(() => {

@@ -7,6 +7,7 @@ const AboutComponent = ({ path, title, style }) => {
 	if (path) {
 		clazz += " margin-left";
 	}
+	// TODO потрібно ятось оптимізувати цей код, хоча б вместо if/else заюзати тернарку, в іделі можно підключити бібліотечку для динамічних классів
 	return (
 		<section style={{ ...style }} className="about_component">
 			<Container sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
