@@ -7,35 +7,26 @@ import { Container } from "@mui/material";
 import ProductItem from "../../components/productItem/ProductItem";
 
 import useFirebase from "../../services/firebase";
-import { getDocs } from "firebase/firestore";
 
 import "./Home.scss";
 import Spinner from "../../components/spinner/Spinner";
 const Home = () => {
 	const [data, setData] = useState([]);
-	const [loading, setLoading] = useState(false);
-	// TODO Після того як зроблю цей хук з firebase, то виадалити звідси цей стейт
 
-	const { dataCollectionBest } = useFirebase();
+	const { dataCollectionBest, getData, loading } = useFirebase();
 
 	useEffect(() => {
-		getData();
+		onRequest();
+
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	const getData = async () => {
-		setLoading(true);
-		try {
-			const data = await getDocs(dataCollectionBest);
-			const filteredData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-
-			onDataLoaded(filteredData);
-		} catch (error) {}
+	const onRequest = async () => {
+		getData(dataCollectionBest).then(onDataLoaded);
 	};
 
 	const onDataLoaded = (newData) => {
-		setLoading(false);
-		setData((data) => [...data, ...newData]);
+		setData(newData);
 	};
 	const renderItems = (arr) => {
 		const items = arr.map((item) => {

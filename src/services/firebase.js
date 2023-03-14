@@ -1,8 +1,6 @@
-// TODO Потрібно переробити цей 'компонент', та зробити його хуком
-// TODO Також потрібно добавити в цей будучий хук state(loading,error) щоб позбутися його в інших файлах
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, getDocs, getDoc, doc } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 import { useState } from "react";
 
@@ -16,6 +14,7 @@ const useFirebase = () => {
 		appId: "1:771380316006:web:3ccf01ebfd18d2f5102aa7",
 		measurementId: "G-PZDP9WB60K",
 	};
+
 	const app = initializeApp(firebaseConfig);
 	const storage = getStorage(app);
 	const db = getFirestore(app);
@@ -37,8 +36,20 @@ const useFirebase = () => {
 			setLoading(false);
 		}
 	};
+	const getDataId = async (id, collection = "store") => {
+		setLoading(true);
+		try {
+			const docRef = doc(db, collection, id);
+			setLoading((loading) => false);
+			return await getDoc(docRef);
+		} catch (error) {
+			setLoading(false);
+			setError(true);
+			throw error;
+		}
+	};
 
-	return { app, db, storage, dataCollectionStore, dataCollectionBest, getData, loading, error };
+	return { app, db, storage, dataCollectionStore, dataCollectionBest, getData, loading, error, getDataId };
 };
 
 export default useFirebase;

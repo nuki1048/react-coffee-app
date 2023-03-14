@@ -1,29 +1,20 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import useFirebase from "../../services/firebase";
-import { getDoc, doc } from "firebase/firestore";
-import { Container } from "@mui/system";
 
+import useFirebase from "../../services/firebase";
+import Spinner from "../../components/spinner/Spinner";
+import { Container } from "@mui/system";
 import Header from "../../components/header/Header";
 
 import "./OurCoffeeDetails.scss";
-import Spinner from "../../components/spinner/Spinner";
 
 const OurCoffeeDetails = () => {
 	const { productId } = useParams();
 	const [data, setData] = useState({});
-	const [loading, setLoading] = useState();
-	const { db } = useFirebase();
+	const { getDataId, loading } = useFirebase();
 	const getData = async () => {
-		setLoading(true);
-		try {
-			const docRef = doc(db, "store", productId);
-			const docSnap = await getDoc(docRef);
-			onDataLoaded(docSnap.data());
-		} catch (error) {
-			console.error(error);
-		}
+		getDataId(productId).then(onDataLoaded);
 	};
 	useEffect(() => {
 		getData();
@@ -31,7 +22,6 @@ const OurCoffeeDetails = () => {
 	}, []);
 	console.log("render");
 	const onDataLoaded = (data) => {
-		setLoading(false);
 		setData(data);
 	};
 
@@ -41,7 +31,8 @@ const OurCoffeeDetails = () => {
 		<>
 			<Header tittle={"For your pleasure"} path={"../img/second_main_bg.jpg"} />
 			<Container sx={{ marginTop: "70px", width: "865px", display: "flex" }}>
-				{spinner} {view}
+				{spinner}
+				{view}
 			</Container>
 		</>
 	);
