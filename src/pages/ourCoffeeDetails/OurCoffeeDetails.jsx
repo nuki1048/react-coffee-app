@@ -23,6 +23,7 @@ const OurCoffeeDetails = () => {
 	console.log("render");
 	const onDataLoaded = (data) => {
 		setData(data);
+		console.log(data);
 	};
 
 	const spinner = loading ? <Spinner /> : null;
