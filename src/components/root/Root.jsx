@@ -1,6 +1,6 @@
 import React from "react";
 // import { Container } from "@mui/material";
-import "./Navbar.scss";
+import "./Root.scss";
 import { NavLink, Outlet } from "react-router-dom";
 const Root = ({ color, beforeColor }) => {
 	let navMenuColor = color === "black" ? "navbar-link black" : "navbar-link white";

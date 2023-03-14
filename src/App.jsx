@@ -1,7 +1,7 @@
 import "./App.scss";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import Home from "./pages/home/Home";
-import Root from "./components/navbar/Navbar";
+import Root from "./components/root/Root";
 import OurCoffee from "./pages/ourCoffee/OurCoffee";
 import Pleasure from "./pages/pleasure/Pleasure";
 import OurCoffeeDetails from "./pages/ourCoffeeDetails/OurCoffeeDetails";
