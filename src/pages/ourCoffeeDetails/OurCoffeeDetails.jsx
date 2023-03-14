@@ -2,10 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+import Header from "../../components/header/Header";
 import useFirebase from "../../services/firebase";
 import Spinner from "../../components/spinner/Spinner";
 import { Container } from "@mui/system";
-import Header from "../../components/header/Header";
 
 import "./OurCoffeeDetails.scss";
 
