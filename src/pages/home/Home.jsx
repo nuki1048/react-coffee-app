@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import AboutComponent from "../../components/aboutComponent/AboutComponent";
 import Footer from "../../components/footer/Footer";
 import Promo from "../../components/promo/Promo";
 import { Container } from "@mui/material";
 import ProductItem from "../../components/productItem/ProductItem";
+import AboutComponent from "../../components/aboutComponent/AboutComponent";
 
 import useFirebase from "../../services/firebase";
 
