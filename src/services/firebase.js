@@ -40,8 +40,9 @@ const useFirebase = () => {
 		setLoading(true);
 		try {
 			const docRef = doc(db, collection, id);
-			setLoading((loading) => false);
-			return await (await getDoc(docRef)).data();
+			const data = await (await getDoc(docRef)).data();
+			setLoading(false);
+			return data;
 		} catch (error) {
 			setLoading(false);
 			setError(true);

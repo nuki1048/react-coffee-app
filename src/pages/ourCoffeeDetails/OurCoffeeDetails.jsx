@@ -12,7 +12,7 @@ import "./OurCoffeeDetails.scss";
 const OurCoffeeDetails = () => {
 	const { productId } = useParams();
 	const [data, setData] = useState({});
-	const { getDataId, loading } = useFirebase();
+	const { getDataId, loading, error } = useFirebase();
 	const getData = async () => {
 		getDataId(productId).then(onDataLoaded);
 	};
@@ -25,12 +25,11 @@ const OurCoffeeDetails = () => {
 		setData(data);
 		console.log(data);
 	};
-
 	const spinner = loading ? <Spinner /> : null;
 	const view = !loading ? <View data={data} /> : null;
 	return (
 		<>
-			<Header tittle={"For your pleasure"} path={"../img/second_main_bg.jpg"} />
+			<Header tittle={"Our Coffee"} path={"../img/second_main_bg.jpg"} />
 			<Container sx={{ marginTop: "70px", width: "865px", display: "flex" }}>
 				{spinner}
 				{view}
