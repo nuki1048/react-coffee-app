@@ -3,38 +3,39 @@ import Header from "../../components/header/Header";
 import AboutComponent from "../../components/aboutComponent/AboutComponent";
 import Store from "../../components/store/Store";
 import Footer from "../../components/footer/Footer";
+import Spinner from "../../components/spinner/Spinner";
+import useFirebase from "../../services/firebase";
 
-import { db } from "../../services/firebase";
-import { collection, getDocs } from "firebase/firestore";
 export const Pleasure = () => {
-	const dataCollection = collection(db, "store");
+	const { getData, loading } = useFirebase();
+
 	const [data, setData] = useState([]);
-	const [loading, setLoading] = useState(false);
+
 	useEffect(() => {
-		getData();
+		onRequest();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	const getData = async () => {
-		setLoading(true);
-		try {
-			const data = await getDocs(dataCollection);
-			const filteredData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-			onDataLoaded(filteredData);
-		} catch (error) {}
+	const onRequest = () => {
+		getData().then(onDataLoaded);
 	};
 
 	const onDataLoaded = (newData) => {
-		setLoading(false);
-		setData((data) => [...data, ...newData]);
+		setData(newData);
 	};
-
+	const spinner = loading ? (
+		<div className="store-wrapper">
+			<Spinner />
+		</div>
+	) : null;
+	const view = !loading ? <Store storeItem={data} /> : null;
 	return (
 		<div>
 			<Header tittle={"For your pleasure"} path={"img/pleasure_bg.jpg"} />
 			<AboutComponent title={"About our goods"} path={"img/pleasurePhoto.jpg"} />
 			<hr style={{ width: "240px", marginTop: "60px" }} />
-			<Store storeItem={data} loading={loading} />
+			{spinner}
+			{view}
 			<Footer />
 		</div>
 	);

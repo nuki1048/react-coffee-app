@@ -6,34 +6,27 @@ import Store from "../../components/store/Store";
 // import db from "../db.json";
 // import { collection, getDocs } from "firebase/firestore";
 
-import { db } from "../../services/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import useFirebase from "../../services/firebase";
+
+import Spinner from "../../components/spinner/Spinner";
 
 const OurCoffee = () => {
 	const [data, setData] = useState([]);
-	const [loading, setLoading] = useState(false);
 	const [filter, setFilter] = useState("All");
 	const [term, setTerm] = useState("");
-
-	const dataCollection = collection(db, "store");
+	const { getData, loading } = useFirebase();
 
 	useEffect(() => {
-		getData();
+		onRequest();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	const getData = async () => {
-		setLoading(true);
-		try {
-			const data = await getDocs(dataCollection);
-			const filteredData = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-			onDataLoaded(filteredData);
-		} catch (error) {}
+	const onRequest = () => {
+		getData().then(onDataLoaded);
 	};
 
 	const onDataLoaded = (newData) => {
-		setLoading(false);
-		setData((data) => [...data, ...newData]);
+		setData(newData);
 	};
 
 	const filterPost = (items, filter) => {
@@ -65,23 +58,27 @@ const OurCoffee = () => {
 	const onUpdateSearch = (term) => {
 		setTerm(term);
 	};
-
 	const visibleData = filterPost(searchEmp(data, term), filter);
+	const spinner = loading ? (
+		<div className="store-wrapper">
+			<Spinner />
+		</div>
+	) : null;
+	const view = !loading ? (
+		<Store
+			onUpdateSearch={onUpdateSearch}
+			storeItem={visibleData}
+			onFilterSelect={onFilterSelect}
+			filtersVisible={true}
+		/>
+	) : null;
 	return (
 		<div>
 			<Header tittle={"Our Coffee"} path={"img/second_main_bg.jpg"} />
 			<AboutComponent title={"About our beans"} path={"img/aboutPhoto.jpg"} />
 			<hr style={{ width: "240px", marginTop: "60px" }} />
-			<Store
-				onUpdateSearch={onUpdateSearch}
-				storeItem={visibleData}
-				onFilterSelect={onFilterSelect}
-				filtersVisible={true}
-				loading={loading}
-			/>
-			{
-				//TODO Ось цей код краще всього переробити так щоби error та loading не передавався по пропсам
-			}
+			{spinner}
+			{view}
 			<Footer />
 		</div>
 	);

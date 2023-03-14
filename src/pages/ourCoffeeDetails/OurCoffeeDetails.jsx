@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { db } from "../../services/firebase";
+import useFirebase from "../../services/firebase";
 import { getDoc, doc } from "firebase/firestore";
 import { Container } from "@mui/system";
 
@@ -14,6 +14,7 @@ const OurCoffeeDetails = () => {
 	const { productId } = useParams();
 	const [data, setData] = useState({});
 	const [loading, setLoading] = useState();
+	const { db } = useFirebase();
 	const getData = async () => {
 		setLoading(true);
 		try {
