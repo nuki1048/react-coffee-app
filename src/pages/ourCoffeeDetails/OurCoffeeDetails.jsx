@@ -10,6 +10,7 @@ import { Container } from "@mui/system";
 import "./OurCoffeeDetails.scss";
 import ErrorBoundary from "../../components/errorBoundary/ErrorBoundary";
 import ErrorMessage from "../../components/errorMessage/ErrorMessage";
+import Footer from "../../components/footer/Footer";
 
 const OurCoffeeDetails = () => {
 	const { productId } = useParams();
@@ -37,6 +38,7 @@ const OurCoffeeDetails = () => {
 				{spinner}
 				{errorMessage}
 			</Container>
+			<Footer />
 		</section>
 	);
 };
