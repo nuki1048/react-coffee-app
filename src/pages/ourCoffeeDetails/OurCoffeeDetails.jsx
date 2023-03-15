@@ -27,7 +27,7 @@ const OurCoffeeDetails = () => {
 		setData(data);
 	};
 	const spinner = loading ? <Spinner /> : null;
-	const view = !loading ? <View data={data} /> : null;
+	const view = !(loading || error) ? <View data={data} /> : null;
 	const errorMessage = error ? <ErrorMessage /> : null;
 	return (
 		<section className="our-coffee-details">

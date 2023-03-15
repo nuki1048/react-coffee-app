@@ -71,7 +71,7 @@ const OurCoffee = () => {
 				<Spinner />
 			</div>
 		) : null;
-	const view = !loading ? (
+	const view = !(loading || error) ? (
 		<Store
 			onUpdateSearch={onUpdateSearch}
 			storeItem={visibleData}

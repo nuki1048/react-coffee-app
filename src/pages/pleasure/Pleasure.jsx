@@ -30,7 +30,7 @@ export const Pleasure = () => {
 			<Spinner />
 		</div>
 	) : null;
-	const view = !loading ? <Store storeItem={data} /> : null;
+	const view = !(loading || error) ? <Store storeItem={data} /> : null;
 	const errorMessage = error ? <ErrorMessage /> : null;
 	return (
 		<div>

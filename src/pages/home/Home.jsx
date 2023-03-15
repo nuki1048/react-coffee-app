@@ -37,7 +37,7 @@ const Home = () => {
 		return <div className="product-wrapper">{items}</div>;
 	};
 	const items = renderItems(data);
-	const view = !loading ? items : null;
+	const view = !(loading || error) ? items : null;
 	const spinner = loading ? <Spinner /> : null;
 	const errorMessage = error ? <ErrorMessage /> : null;
 	return (
