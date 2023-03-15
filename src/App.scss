@@ -48,6 +48,11 @@
 			transform: translateX(0);
 		}
 	}
+	section.our-coffee-details {
+		.item {
+			width: 750px;
+		}
+	}
 }
 
 @media only screen and (max-width: 992px) {
@@ -73,6 +78,15 @@
 	section.section-store {
 		.store-wrapper {
 			gap: 40px 40px;
+		}
+	}
+	section.our-coffee-details {
+		.item {
+			img {
+				width: 300px;
+				height: 300px;
+				object-fit: cover;
+			}
 		}
 	}
 }
@@ -132,6 +146,17 @@
 	section.section-footer {
 		.navbar {
 			transform: translateX(0);
+		}
+	}
+	section.our-coffee-details {
+		.item {
+			img {
+				display: none;
+			}
+			&-info {
+				margin-left: 0;
+				text-align: center;
+			}
 		}
 	}
 }

@@ -1,63 +1,68 @@
 .item {
-	//  display: "flex", flexDirection: "column", marginLeft: "55px"
+	margin-top: 70px;
+	width: 865px;
 	display: flex;
-	flex-direction: column;
-	margin-left: 55px;
-	text-align: left;
-	&__title {
-		text-align: center;
-		position: relative;
-		font-style: normal;
-		font-weight: 400;
-		font-size: 24px;
-		line-height: 35px;
-		color: #000000;
-		&::before {
-			content: "";
-			display: block;
-			width: 200px;
-			height: 30px;
-			position: absolute;
-			background: url(../../../public/icons/Beans_logo-black.svg);
-			left: 50%;
-			transform: translateX(-50%);
-			top: 50px;
+	align-items: center;
+	&-info {
+		display: flex;
+		flex-direction: column;
+		margin-left: 55px;
+		text-align: left;
+		&__title {
+			text-align: center;
+			position: relative;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 24px;
+			line-height: 35px;
+			color: #000000;
+			&::before {
+				content: "";
+				display: block;
+				width: 200px;
+				height: 30px;
+				position: absolute;
+				background: url(../../../public/icons/Beans_logo-black.svg);
+				left: 50%;
+				transform: translateX(-50%);
+				top: 50px;
+			}
 		}
-	}
-	&__country {
-		margin-top: 76px;
-		font-family: "Merienda";
-		font-style: normal;
-		font-weight: 400;
-		font-size: 14px;
-		line-height: 20px;
-		span {
+		&__country {
+			margin-top: 76px;
+			font-family: "Merienda";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 20px;
+			span {
+				font-weight: 700;
+			}
+		}
+		&__description {
+			margin-top: 16px;
+			font-family: "Merienda";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 20px;
+			color: #000000;
+			span {
+				font-weight: 700;
+			}
+		}
+		&__price {
+			margin-top: 16px;
+			font-family: "Merienda";
+			font-style: normal;
 			font-weight: 700;
-		}
-	}
-	&__description {
-		margin-top: 16px;
-		font-family: "Merienda";
-		font-style: normal;
-		font-weight: 400;
-		font-size: 14px;
-		line-height: 20px;
-		color: #000000;
-		span {
-			font-weight: 700;
-		}
-	}
-	&__price {
-		margin-top: 16px;
-		font-family: "Merienda";
-		font-style: normal;
-		font-weight: 700;
-		font-size: 14px;
-		line-height: 20px;
-		color: #000000;
-		span {
-			margin-left: 5px;
-			font-size: 25px;
+			font-size: 14px;
+			line-height: 20px;
+			color: #000000;
+			span {
+				margin-left: 5px;
+				font-size: 25px;
+			}
 		}
 	}
 }

@@ -14,25 +14,27 @@ const Store = ({ storeItem, onFilterSelect, onUpdateSearch, filtersVisible, load
 		</div>
 	) : null;
 	return (
-		<Container sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-			{filters}
-			<div className="store-wrapper">
-				{loading ? (
-					<Spinner />
-				) : (
-					storeItem.map((item) => (
-						<StoreItem
-							id={item.id}
-							img={item.img}
-							name={item.name}
-							country={item.country}
-							price={item.price}
-							key={item.id}
-						/>
-					))
-				)}
-			</div>
-		</Container>
+		<section className="section-store">
+			<Container sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+				{filters}
+				<div className="store-wrapper">
+					{loading ? (
+						<Spinner />
+					) : (
+						storeItem.map((item) => (
+							<StoreItem
+								id={item.id}
+								img={item.img}
+								name={item.name}
+								country={item.country}
+								price={item.price}
+								key={item.id}
+							/>
+						))
+					)}
+				</div>
+			</Container>
+		</section>
 	);
 };
 

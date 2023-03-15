@@ -12,7 +12,7 @@ import "./OurCoffeeDetails.scss";
 const OurCoffeeDetails = () => {
 	const { productId } = useParams();
 	const [data, setData] = useState({});
-	const { getDataId, loading, error } = useFirebase();
+	const { getDataId, loading } = useFirebase();
 	const getData = async () => {
 		getDataId(productId).then(onDataLoaded);
 	};
@@ -20,42 +20,41 @@ const OurCoffeeDetails = () => {
 		getData();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	console.log("render");
+
 	const onDataLoaded = (data) => {
 		setData(data);
-		console.log(data);
 	};
 	const spinner = loading ? <Spinner /> : null;
 	const view = !loading ? <View data={data} /> : null;
 	return (
-		<>
+		<section className="our-coffee-details">
 			<Header tittle={"Our Coffee"} path={"../img/second_main_bg.jpg"} />
-			<Container sx={{ marginTop: "70px", width: "865px", display: "flex" }}>
+			<Container sx={{ display: "flex", justifyContent: "center" }}>
 				{spinner}
 				{view}
 			</Container>
-		</>
+		</section>
 	);
 };
 const View = ({ data }) => {
 	return (
-		<>
+		<div className="item">
 			<img src="../img/coffee-details.jpg" alt="coffee" />
-			<div key={0} className="item">
-				<h2 className="item__title">About it</h2>
-				<div className="item__country">
+			<div key={0} className="item-info">
+				<h2 className="item-info__title">About it</h2>
+				<div className="item-info__country">
 					<span>Country</span>: {data.country}
 				</div>
-				<div className="item__description">
+				<div className="item-info__description">
 					<span>Description</span>: Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis error fugit
 					similique id eaque laboriosam? Aspernatur animi, sunt aut officiis iste adipisci repellendus facere minima,
 					cumque unde voluptatem natus. Suscipit.
 				</div>
-				<div className="item__price">
+				<div className="item-info__price">
 					Price: <span>{data.price}$</span>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
