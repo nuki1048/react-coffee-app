@@ -1,4 +1,4 @@
-import { useState, useEffect, useTransition, Suspense } from "react";
+import { useState, useEffect, useTransition } from "react";
 import AboutComponent from "../../components/aboutComponent/AboutComponent";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";

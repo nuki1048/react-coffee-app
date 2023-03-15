@@ -24,6 +24,7 @@
 	margin-top: 60px;
 }
 .store {
+	transition: 0.8s all;
 	&-wrapper {
 		margin-top: 60px;
 		display: grid;
@@ -33,6 +34,10 @@
 		grid-auto-columns: 220px;
 		justify-content: center;
 		gap: 60px 71px;
+		transition: filter 0.5s ease-in-out;
+		&:hover > :not(:hover) {
+			filter: blur(2px) + grayscale(50%);
+		}
 	}
 }
 .filter {
