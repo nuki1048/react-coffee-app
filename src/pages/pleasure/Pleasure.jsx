@@ -5,9 +5,11 @@ import Store from "../../components/store/Store";
 import Footer from "../../components/footer/Footer";
 import Spinner from "../../components/spinner/Spinner";
 import useFirebase from "../../services/firebase";
+import ErrorBoundary from "../../components/errorBoundary/ErrorBoundary";
+import ErrorMessage from "../../components/errorMessage/ErrorMessage";
 
 export const Pleasure = () => {
-	const { getData, loading } = useFirebase();
+	const { getData, loading, error } = useFirebase();
 
 	const [data, setData] = useState([]);
 
@@ -29,13 +31,15 @@ export const Pleasure = () => {
 		</div>
 	) : null;
 	const view = !loading ? <Store storeItem={data} /> : null;
+	const errorMessage = error ? <ErrorMessage /> : null;
 	return (
 		<div>
 			<Header tittle={"For your pleasure"} path={"img/pleasure_bg.jpg"} />
 			<AboutComponent title={"About our goods"} path={"img/pleasurePhoto.jpg"} />
 			<hr style={{ width: "240px", marginTop: "60px" }} />
+			<ErrorBoundary>{view}</ErrorBoundary>
 			{spinner}
-			{view}
+			{errorMessage}
 			<Footer />
 		</div>
 	);

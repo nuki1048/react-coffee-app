@@ -9,10 +9,12 @@ import useFirebase from "../../services/firebase";
 
 import "./Home.scss";
 import Spinner from "../../components/spinner/Spinner";
+import ErrorBoundary from "../../components/errorBoundary/ErrorBoundary";
+import ErrorMessage from "../../components/errorMessage/ErrorMessage";
 const Home = () => {
 	const [data, setData] = useState([]);
 
-	const { dataCollectionBest, getData, loading } = useFirebase();
+	const { dataCollectionBest, getData, loading, error } = useFirebase();
 
 	useEffect(() => {
 		onRequest();
@@ -37,7 +39,7 @@ const Home = () => {
 	const items = renderItems(data);
 	const view = !loading ? items : null;
 	const spinner = loading ? <Spinner /> : null;
-
+	const errorMessage = error ? <ErrorMessage /> : null;
 	return (
 		<div>
 			<Promo />
@@ -45,8 +47,9 @@ const Home = () => {
 			<section className="section-best">
 				<Container sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 					<h2 className="best-tittle">Our best</h2>
-					{view}
+					<ErrorBoundary>{view}</ErrorBoundary>
 					{spinner}
+					{errorMessage}
 				</Container>
 			</section>
 

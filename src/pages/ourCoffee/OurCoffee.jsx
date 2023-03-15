@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useTransition, Suspense } from "react";
 import AboutComponent from "../../components/aboutComponent/AboutComponent";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
@@ -9,12 +9,16 @@ import Store from "../../components/store/Store";
 import useFirebase from "../../services/firebase";
 
 import Spinner from "../../components/spinner/Spinner";
+import ErrorBoundary from "../../components/errorBoundary/ErrorBoundary";
+import ErrorMessage from "../../components/errorMessage/ErrorMessage";
 
 const OurCoffee = () => {
 	const [data, setData] = useState([]);
 	const [filter, setFilter] = useState("All");
 	const [term, setTerm] = useState("");
-	const { getData, loading } = useFirebase();
+	const [isPending, startTransition] = useTransition();
+
+	const { getData, loading, error } = useFirebase();
 
 	useEffect(() => {
 		onRequest();
@@ -56,14 +60,17 @@ const OurCoffee = () => {
 	};
 
 	const onUpdateSearch = (term) => {
-		setTerm(term);
+		startTransition(() => {
+			setTerm(term);
+		});
 	};
 	const visibleData = filterPost(searchEmp(data, term), filter);
-	const spinner = loading ? (
-		<div className="store-wrapper">
-			<Spinner />
-		</div>
-	) : null;
+	const spinner =
+		loading || isPending ? (
+			<div className="store-wrapper">
+				<Spinner />
+			</div>
+		) : null;
 	const view = !loading ? (
 		<Store
 			onUpdateSearch={onUpdateSearch}
@@ -72,15 +79,18 @@ const OurCoffee = () => {
 			filtersVisible={true}
 		/>
 	) : null;
+	const errorMessage = error ? <ErrorMessage /> : null;
 	return (
-		<div>
+		<>
 			<Header tittle={"Our Coffee"} path={"img/second_main_bg.jpg"} />
 			<AboutComponent title={"About our beans"} path={"img/aboutPhoto.jpg"} />
 			<hr style={{ width: "240px", marginTop: "60px" }} />
+			<ErrorBoundary>{view}</ErrorBoundary>
 			{spinner}
-			{view}
+
+			{errorMessage}
 			<Footer />
-		</div>
+		</>
 	);
 };
 

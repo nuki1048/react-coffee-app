@@ -8,11 +8,13 @@ import Spinner from "../../components/spinner/Spinner";
 import { Container } from "@mui/system";
 
 import "./OurCoffeeDetails.scss";
+import ErrorBoundary from "../../components/errorBoundary/ErrorBoundary";
+import ErrorMessage from "../../components/errorMessage/ErrorMessage";
 
 const OurCoffeeDetails = () => {
 	const { productId } = useParams();
 	const [data, setData] = useState({});
-	const { getDataId, loading } = useFirebase();
+	const { getDataId, loading, error } = useFirebase();
 	const getData = async () => {
 		getDataId(productId).then(onDataLoaded);
 	};
@@ -26,12 +28,14 @@ const OurCoffeeDetails = () => {
 	};
 	const spinner = loading ? <Spinner /> : null;
 	const view = !loading ? <View data={data} /> : null;
+	const errorMessage = error ? <ErrorMessage /> : null;
 	return (
 		<section className="our-coffee-details">
 			<Header tittle={"Our Coffee"} path={"../img/second_main_bg.jpg"} />
 			<Container sx={{ display: "flex", justifyContent: "center" }}>
+				<ErrorBoundary>{view}</ErrorBoundary>
 				{spinner}
-				{view}
+				{errorMessage}
 			</Container>
 		</section>
 	);

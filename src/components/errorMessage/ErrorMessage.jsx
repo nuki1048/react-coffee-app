@@ -1,5 +1,5 @@
 import React from "react";
-import error from "./error.svb";
+import error from "./error.svg";
 const ErrorMessage = () => {
 	return (
 		<img
