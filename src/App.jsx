@@ -1,11 +1,15 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
-import Home from "./pages/home/Home";
-import Root from "./components/root/Root";
-import OurCoffee from "./pages/ourCoffee/OurCoffee";
-import Pleasure from "./pages/pleasure/Pleasure";
-import OurCoffeeDetails from "./pages/ourCoffeeDetails/OurCoffeeDetails";
 
+import Root from "./components/root/Root";
 import "./App.scss";
+import Spinner from "./components/spinner/Spinner";
+
+const Home = lazy(() => import("./pages/home/Home"));
+const OurCoffee = lazy(() => import("./pages/ourCoffee/OurCoffee"));
+const Pleasure = lazy(() => import("./pages/pleasure/Pleasure"));
+const OurCoffeeDetails = lazy(() => import("./pages/ourCoffeeDetails/OurCoffeeDetails"));
+
 function App() {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
@@ -17,7 +21,13 @@ function App() {
 			</Route>
 		)
 	);
-	return <RouterProvider router={router} />;
+	return (
+		<div className="app">
+			<Suspense fallback={<Spinner stylez={{ display: "flex", marginTop: "200px" }} />}>
+				<RouterProvider router={router} />
+			</Suspense>
+		</div>
+	);
 }
 
 export default App;

@@ -1,9 +1,9 @@
 import React from "react";
 
-const Spinner = () => {
+const Spinner = (props) => {
 	return (
 		<svg
-			style={{ margin: "0 auto", gridColumn: "1/4", alignSelf: "center" }}
+			style={{ margin: "0 auto", gridColumn: "1/4", alignSelf: "center", ...props.stylez }}
 			version="1.0"
 			width="64px"
 			height="64px"
