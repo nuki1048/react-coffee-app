@@ -3,16 +3,14 @@ import React from "react";
 import "./AboutComponent.scss";
 const AboutComponent = ({ path, title, style }) => {
 	const img = path ? <img src={path} alt={title} /> : <div></div>;
-	let clazz = "info-wrapper";
-	if (path) {
-		clazz += " margin-left";
-	}
+	const clazz = path ? " margin-left" : null;
+
 	return (
 		<section style={{ ...style }} className="about_component">
 			<Container sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 				<div className="content_wrapper">
 					{img}
-					<div className={clazz}>
+					<div className={`${clazz} info-wrapper`}>
 						<h2 className="info__tittle">{title}</h2>
 						<p className="info__descrip">
 							Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid at highly
