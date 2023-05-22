@@ -1,6 +1,5 @@
 {
 	"name": "react-coffee-app",
-	"homepage": "https://nuki1048.github.io/react-coffee-app/",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
